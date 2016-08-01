@@ -45,9 +45,4 @@
     }
 }
 
-- (void)setBackgroundColorWithGary
-{
-    self.backgroundColor = [UIColor grayColor];
-}
-
 @end

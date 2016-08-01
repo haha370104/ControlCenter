@@ -12,6 +12,4 @@
 
 @property (nonatomic, copy) void (^action)(UIHighLightButton *);
 
-- (void)setBackgroundColorWithGary;
-
 @end

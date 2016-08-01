@@ -35,14 +35,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self initDragView];
-    [self initControlButtonCollectionView];
-    [self initControlButtonCollectionModel];
-    [self initLightSlider];
-    [self initMusicView];
-    [self initAirDropView];
-    [self initAppButtonCollectionView];
-    [self initAppButtonCollectionModel];
+    [self.view addSubview:self.dragView];
+    [self.view addSubview:self.controlButtonCollectionView];
+    [self.view addSubview:self.lightSlider];
+    [self.view addSubview:self.musicView];
+    [self.view addSubview:self.airDropView];
+    [self.view addSubview:self.appButtonCollectionView];
+    [self setupConstraints];
     self.view.backgroundColor = [UIColor lightGrayColor];
 }
 
@@ -109,130 +108,154 @@
 
 #pragma mark - private -
 
-- (void)initControlButtonCollectionModel
+- (void)setupConstraints
 {
-    self.controlButtonCellModels = [[NSMutableArray alloc] init];
-    NSMutableArray <ControlCollectionCellModel *> *tempControlButtonCollectionModel = [[NSMutableArray alloc] init];
-    for (int section = 0; section < 2; section++) {
-        for (int item = 0; item < 5; item++) {
-            ControlCollectionCellModel *model = [[ControlCollectionCellModel alloc] initWithImageName:@"bluetooth" roundFlag:YES canSelected:YES];
-            [tempControlButtonCollectionModel addObject:model];
-        }
-        [self.controlButtonCellModels addObject:[tempControlButtonCollectionModel copy]];
-        [tempControlButtonCollectionModel removeAllObjects];
-    }
-}
-
-- (void)initAppButtonCollectionModel
-{
-    self.appButtonCellModels = [[NSMutableArray alloc] init];
-    NSMutableArray <ControlCollectionCellModel *> *tempControlButtonCollectionModel = [[NSMutableArray alloc] init];
-    for (int section = 0; section < 2; section++) {
-        for (int item = 0; item < 4; item++) {
-            ControlCollectionCellModel *model = [[ControlCollectionCellModel alloc] initWithImageName:@"wifi" roundFlag:YES canSelected:NO];
-            [tempControlButtonCollectionModel addObject:model];
-        }
-        [self.appButtonCellModels addObject:[tempControlButtonCollectionModel copy]];
-        [tempControlButtonCollectionModel removeAllObjects];
-    }
-}
-
-- (void)initDragView
-{
-    self.dragView = [[UIView alloc] init];
-    self.dragView.backgroundColor = [UIColor lightGrayColor];
-    [self.view addSubview:self.dragView];
     [self.dragView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.centerX.top.equalTo(self.view);
         make.height.equalTo(self.view).multipliedBy(0.05f);
     }];
-}
-
-- (void)initControlButtonCollectionView
-{
-    UIControlCollectionViewFlowLayout *layout = [[UIControlCollectionViewFlowLayout alloc] init];
-    layout.itemSize = CGSizeMake(35, 35);
-    CGFloat innerSpace = (self.view.bounds.size.width - 5 * 35) / 6;
-    layout.sectionInset = UIEdgeInsetsMake(5, innerSpace, 5, innerSpace);
-    layout.minimumLineSpacing = innerSpace;
-    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    self.controlButtonCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-    self.controlButtonCollectionView.backgroundColor = [UIColor lightGrayColor];
-    self.controlButtonCollectionView.delegate = self;
-    self.controlButtonCollectionView.dataSource = self;
-    self.controlButtonCollectionView.showsHorizontalScrollIndicator = NO;
-    [self.controlButtonCollectionView registerClass:[UIButtonCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UIButtonCollectionViewCell class])];
-    [self.view addSubview:self.controlButtonCollectionView];
     [self.controlButtonCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.centerX.equalTo(self.view);
         make.height.equalTo(self.view).multipliedBy(0.13f);
         make.top.equalTo(self.dragView.mas_bottom);
     }];
-}
-
-- (void)initLightSlider
-{
-    self.lightSlider = [[UIControlCenterSlider alloc] init];
-    self.lightSlider.backgroundColor = [UIColor grayColor];
-    self.lightSlider.controlCenterSlider.minimumValueImage = [UIImage imageNamed:@"left-light"];
-    self.lightSlider.controlCenterSlider.maximumValueImage = [UIImage imageNamed:@"right-light"];
-    [self.view addSubview:self.lightSlider];
     [self.lightSlider mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.centerX.equalTo(self.view);
         make.height.equalTo(self.view.mas_height).multipliedBy(0.11f);
         make.top.equalTo(self.controlButtonCollectionView.mas_bottom);
     }];
-}
-
-- (void)initMusicView
-{
-    self.musicView = [[UIMusicView alloc] init];
-    self.musicView.musicTitleLabel.text = @"网易云音乐";
-    self.musicView.musicLyricsLabel.text = @"嘿嘿嘿嘿嘿";
-    self.musicView.backgroundColor = [UIColor lightGrayColor];
-    [self.view addSubview:self.musicView];
     [self.musicView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.centerX.equalTo(self.view);
         make.height.equalTo(self.view).multipliedBy(0.4f);
         make.top.equalTo(self.lightSlider.mas_bottom);
     }];
-}
-
-- (void)initAirDropView
-{
-    self.airDropView = [[UIHighLightButton alloc] init];
-    self.airDropView.backgroundColor = [UIColor grayColor];
-    [self.airDropView setTitle:@"AirDrop 共享" forState:UIControlStateNormal];
-    self.airDropView.titleLabel.font = [UIFont systemFontOfSize:14];
-    [self.airDropView setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [self.airDropView setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [self.view addSubview:self.airDropView];
     [self.airDropView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.centerX.equalTo(self.view);
         make.height.equalTo(self.view).multipliedBy(0.11f);
         make.top.equalTo(self.musicView.mas_bottom);
     }];
-}
-
-- (void)initAppButtonCollectionView
-{
-    UIControlCollectionViewFlowLayout *layout = [[UIControlCollectionViewFlowLayout alloc] init];
-    layout.itemSize = CGSizeMake(60, 60);
-    CGFloat innerSpace = (self.view.bounds.size.width - 4 * 60) / 5;
-    layout.sectionInset = UIEdgeInsetsMake(5, innerSpace, 5, innerSpace);
-    layout.minimumLineSpacing = innerSpace;
-    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    self.appButtonCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-    self.appButtonCollectionView.backgroundColor = [UIColor lightGrayColor];
-    self.appButtonCollectionView.delegate = self;
-    self.appButtonCollectionView.dataSource = self;
-    self.appButtonCollectionView.showsHorizontalScrollIndicator = NO;
-    [self.appButtonCollectionView registerClass:[UIButtonCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UIButtonCollectionViewCell class])];
-    [self.view addSubview:self.appButtonCollectionView];
     [self.appButtonCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.bottom.centerX.equalTo(self.view);
         make.top.equalTo(self.airDropView.mas_bottom);
     }];
+}
+
+#pragma mark - getter && setter -
+
+- (UIView *)dragView
+{
+    if(!_dragView){
+        _dragView = [[UIView alloc] init];
+        _dragView.backgroundColor = [UIColor lightGrayColor];
+    }
+    return _dragView;
+}
+
+- (UICollectionView *)controlButtonCollectionView
+{
+    if(!_controlButtonCollectionView){
+        UIControlCollectionViewFlowLayout *layout = [[UIControlCollectionViewFlowLayout alloc] init];
+        layout.itemSize = CGSizeMake(35, 35);
+        CGFloat innerSpace = (self.view.bounds.size.width - 5 * 35) / 6;
+        layout.sectionInset = UIEdgeInsetsMake(5, innerSpace, 5, innerSpace);
+        layout.minimumLineSpacing = innerSpace;
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        _controlButtonCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+        _controlButtonCollectionView.backgroundColor = [UIColor lightGrayColor];
+        _controlButtonCollectionView.delegate = self;
+        _controlButtonCollectionView.dataSource = self;
+        _controlButtonCollectionView.showsHorizontalScrollIndicator = NO;
+        [_controlButtonCollectionView registerClass:[UIButtonCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UIButtonCollectionViewCell class])];
+    }
+    return _controlButtonCollectionView;
+}
+
+- (UIControlCenterSlider *)lightSlider
+{
+    if(!_lightSlider){
+        _lightSlider = [[UIControlCenterSlider alloc] init];
+        _lightSlider.backgroundColor = [UIColor grayColor];
+        _lightSlider.controlCenterSlider.minimumValueImage = [UIImage imageNamed:@"left-light"];
+        _lightSlider.controlCenterSlider.maximumValueImage = [UIImage imageNamed:@"right-light"];
+    }
+    return _lightSlider;
+}
+
+- (UIMusicView *)musicView
+{
+    if(!_musicView){
+        _musicView = [[UIMusicView alloc] init];
+        _musicView.musicTitleLabel.text = @"网易云音乐";
+        _musicView.musicLyricsLabel.text = @"嘿嘿嘿嘿嘿";
+        _musicView.backgroundColor = [UIColor lightGrayColor];
+    }
+    return _musicView;
+}
+
+- (UIHighLightButton *)airDropView
+{
+    if(!_airDropView){
+        _airDropView = [[UIHighLightButton alloc] init];
+        _airDropView.backgroundColor = [UIColor grayColor];
+        [_airDropView setTitle:@"AirDrop 共享" forState:UIControlStateNormal];
+        _airDropView.titleLabel.font = [UIFont systemFontOfSize:14];
+        [_airDropView setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_airDropView setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    }
+    return _airDropView;
+}
+
+- (UICollectionView *)appButtonCollectionView
+{
+    if(!_appButtonCollectionView){
+        UIControlCollectionViewFlowLayout *layout = [[UIControlCollectionViewFlowLayout alloc] init];
+        layout.itemSize = CGSizeMake(60, 60);
+        CGFloat innerSpace = (self.view.bounds.size.width - 4 * 60) / 5;
+        layout.sectionInset = UIEdgeInsetsMake(5, innerSpace, 5, innerSpace);
+        layout.minimumLineSpacing = innerSpace;
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        _appButtonCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+        _appButtonCollectionView.backgroundColor = [UIColor lightGrayColor];
+        _appButtonCollectionView.delegate = self;
+        _appButtonCollectionView.dataSource = self;
+        _appButtonCollectionView.showsHorizontalScrollIndicator = NO;
+        [_appButtonCollectionView registerClass:[UIButtonCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UIButtonCollectionViewCell class])];
+    }
+    return _appButtonCollectionView;
+}
+
+- (NSMutableArray<NSArray<ControlCollectionCellModel *> *> *)appButtonCellModels
+{
+    if(!_appButtonCellModels){
+        _appButtonCellModels = [[NSMutableArray alloc] init];
+        NSMutableArray <ControlCollectionCellModel *> *tempControlButtonCollectionModel = [[NSMutableArray alloc] init];
+        for (int section = 0; section < 2; section++) {
+            for (int item = 0; item < 4; item++) {
+                ControlCollectionCellModel *model = [[ControlCollectionCellModel alloc] initWithImageName:@"wifi" roundFlag:YES canSelected:NO];
+                [tempControlButtonCollectionModel addObject:model];
+            }
+            [_appButtonCellModels addObject:[tempControlButtonCollectionModel copy]];
+            [tempControlButtonCollectionModel removeAllObjects];
+        }
+    }
+    return _appButtonCellModels;
+}
+
+- (NSMutableArray<NSArray<ControlCollectionCellModel *> *> *)controlButtonCellModels
+{
+    if(!_controlButtonCellModels){
+        _controlButtonCellModels = [[NSMutableArray alloc] init];
+        NSMutableArray <ControlCollectionCellModel *> *tempControlButtonCollectionModel = [[NSMutableArray alloc] init];
+        for (int section = 0; section < 2; section++) {
+            for (int item = 0; item < 5; item++) {
+                ControlCollectionCellModel *model = [[ControlCollectionCellModel alloc] initWithImageName:@"bluetooth" roundFlag:YES canSelected:YES];
+                [tempControlButtonCollectionModel addObject:model];
+            }
+            [_controlButtonCellModels addObject:[tempControlButtonCollectionModel copy]];
+            [tempControlButtonCollectionModel removeAllObjects];
+        }
+    }
+    return _controlButtonCellModels;
 }
 
 @end
