@@ -144,7 +144,7 @@
 
 - (UIView *)dragView
 {
-    if(!_dragView){
+    if (!_dragView) {
         _dragView = [[UIView alloc] init];
         _dragView.backgroundColor = [UIColor lightGrayColor];
     }
@@ -153,7 +153,7 @@
 
 - (UICollectionView *)controlButtonCollectionView
 {
-    if(!_controlButtonCollectionView){
+    if (!_controlButtonCollectionView) {
         UIControlCollectionViewFlowLayout *layout = [[UIControlCollectionViewFlowLayout alloc] init];
         layout.itemSize = CGSizeMake(35, 35);
         CGFloat innerSpace = (self.view.bounds.size.width - 5 * 35) / 6;
@@ -172,7 +172,7 @@
 
 - (UIControlCenterSlider *)lightSlider
 {
-    if(!_lightSlider){
+    if (!_lightSlider) {
         _lightSlider = [[UIControlCenterSlider alloc] init];
         _lightSlider.backgroundColor = [UIColor grayColor];
         _lightSlider.controlCenterSlider.minimumValueImage = [UIImage imageNamed:@"left-light"];
@@ -183,7 +183,7 @@
 
 - (UIMusicView *)musicView
 {
-    if(!_musicView){
+    if (!_musicView) {
         _musicView = [[UIMusicView alloc] init];
         _musicView.musicTitleLabel.text = @"网易云音乐";
         _musicView.musicLyricsLabel.text = @"嘿嘿嘿嘿嘿";
@@ -194,7 +194,7 @@
 
 - (UIHighLightButton *)airDropView
 {
-    if(!_airDropView){
+    if (!_airDropView) {
         _airDropView = [[UIHighLightButton alloc] init];
         _airDropView.backgroundColor = [UIColor grayColor];
         [_airDropView setTitle:@"AirDrop 共享" forState:UIControlStateNormal];
@@ -207,7 +207,7 @@
 
 - (UICollectionView *)appButtonCollectionView
 {
-    if(!_appButtonCollectionView){
+    if (!_appButtonCollectionView) {
         UIControlCollectionViewFlowLayout *layout = [[UIControlCollectionViewFlowLayout alloc] init];
         layout.itemSize = CGSizeMake(60, 60);
         CGFloat innerSpace = (self.view.bounds.size.width - 4 * 60) / 5;
@@ -226,7 +226,7 @@
 
 - (NSMutableArray<NSArray<ControlCollectionCellModel *> *> *)appButtonCellModels
 {
-    if(!_appButtonCellModels){
+    if (!_appButtonCellModels) {
         _appButtonCellModels = [[NSMutableArray alloc] init];
         NSMutableArray <ControlCollectionCellModel *> *tempControlButtonCollectionModel = [[NSMutableArray alloc] init];
         for (int section = 0; section < 2; section++) {
@@ -243,7 +243,7 @@
 
 - (NSMutableArray<NSArray<ControlCollectionCellModel *> *> *)controlButtonCellModels
 {
-    if(!_controlButtonCellModels){
+    if (!_controlButtonCellModels) {
         _controlButtonCellModels = [[NSMutableArray alloc] init];
         NSMutableArray <ControlCollectionCellModel *> *tempControlButtonCollectionModel = [[NSMutableArray alloc] init];
         for (int section = 0; section < 2; section++) {

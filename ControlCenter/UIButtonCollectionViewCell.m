@@ -30,6 +30,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:NSStringFromSelector(@selector(roundFlag))];
+}
+
 #pragma mark - public -
 
 - (void)setBackGroundImage:(UIImage *)backgroundImage
