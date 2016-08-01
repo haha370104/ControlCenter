@@ -1,0 +1,9 @@
+
+*.xcscheme
+
+ControlCenter.xcodeproj/xcuserdata/haha370104.xcuserdatad/xcschemes/ControlCenter.xcscheme
+
+Pods/
+
+ControlCenter.xcworkspace/contents.xcworkspacedata
+

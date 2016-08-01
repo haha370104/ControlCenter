@@ -7,21 +7,34 @@
 //
 
 #import "ViewController.h"
+#import "UIControlCenterViewController.h"
+#import <Masonry/Masonry.h>
 
 @interface ViewController ()
+
+@property (nonatomic, strong) UIControlCenterViewController *controlCenterViewController;
 
 @end
 
 @implementation ViewController
 
+#pragma mark - lifecycle -
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self initControlCenterViewController];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - private -
+
+- (void)initControlCenterViewController
+{
+    self.controlCenterViewController = [[UIControlCenterViewController alloc]init];
+    [self.view addSubview:self.controlCenterViewController.view];
+    [self.controlCenterViewController.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.width.bottom.equalTo(self.view);
+        make.height.equalTo(self.view).multipliedBy(0.6f);
+    }];
 }
 
 @end

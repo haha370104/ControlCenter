@@ -15,6 +15,15 @@
 		75AC16891D49D389001EE1FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75AC16871D49D389001EE1FC /* LaunchScreen.storyboard */; };
 		75AC16941D49D389001EE1FC /* ControlCenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75AC16931D49D389001EE1FC /* ControlCenterTests.m */; };
 		75AC169F1D49D389001EE1FC /* ControlCenterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75AC169E1D49D389001EE1FC /* ControlCenterUITests.m */; };
+		75AC16AE1D49D932001EE1FC /* UIButtonCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75AC16AD1D49D932001EE1FC /* UIButtonCollectionViewCell.m */; };
+		75AC16B11D4A04D6001EE1FC /* UIControlCenterSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 75AC16B01D4A04D6001EE1FC /* UIControlCenterSlider.m */; };
+		75AC16B41D4A3716001EE1FC /* UIMusicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75AC16B31D4A3716001EE1FC /* UIMusicView.m */; };
+		75AC16B91D4AEF4C001EE1FC /* UIMusicControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75AC16B81D4AEF4C001EE1FC /* UIMusicControlView.m */; };
+		75AC16BC1D4B2443001EE1FC /* ControlCollectionCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 75AC16BB1D4B2443001EE1FC /* ControlCollectionCellModel.m */; };
+		75AC16C01D4B3D13001EE1FC /* UIControlCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 75AC16BF1D4B3D13001EE1FC /* UIControlCollectionViewFlowLayout.m */; };
+		75AC16C31D4B49A8001EE1FC /* UIHighLightButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 75AC16C21D4B49A8001EE1FC /* UIHighLightButton.m */; };
+		75AC16C61D4EE3D0001EE1FC /* UIControlCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75AC16C51D4EE3D0001EE1FC /* UIControlCenterViewController.m */; };
+		BE5941039F548B1BE539A69D /* Pods_ControlCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E022E2F8C0752F62570BC2BB /* Pods_ControlCenter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +60,25 @@
 		75AC169A1D49D389001EE1FC /* ControlCenterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ControlCenterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75AC169E1D49D389001EE1FC /* ControlCenterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ControlCenterUITests.m; sourceTree = "<group>"; };
 		75AC16A01D49D389001EE1FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75AC16AC1D49D932001EE1FC /* UIButtonCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButtonCollectionViewCell.h; sourceTree = "<group>"; };
+		75AC16AD1D49D932001EE1FC /* UIButtonCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIButtonCollectionViewCell.m; sourceTree = "<group>"; };
+		75AC16AF1D4A04D6001EE1FC /* UIControlCenterSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIControlCenterSlider.h; sourceTree = "<group>"; };
+		75AC16B01D4A04D6001EE1FC /* UIControlCenterSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIControlCenterSlider.m; sourceTree = "<group>"; };
+		75AC16B21D4A3716001EE1FC /* UIMusicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMusicView.h; sourceTree = "<group>"; };
+		75AC16B31D4A3716001EE1FC /* UIMusicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIMusicView.m; sourceTree = "<group>"; };
+		75AC16B71D4AEF4C001EE1FC /* UIMusicControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMusicControlView.h; sourceTree = "<group>"; };
+		75AC16B81D4AEF4C001EE1FC /* UIMusicControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIMusicControlView.m; sourceTree = "<group>"; };
+		75AC16BA1D4B2443001EE1FC /* ControlCollectionCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlCollectionCellModel.h; sourceTree = "<group>"; };
+		75AC16BB1D4B2443001EE1FC /* ControlCollectionCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlCollectionCellModel.m; sourceTree = "<group>"; };
+		75AC16BE1D4B3D13001EE1FC /* UIControlCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIControlCollectionViewFlowLayout.h; path = ../UIControlCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		75AC16BF1D4B3D13001EE1FC /* UIControlCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIControlCollectionViewFlowLayout.m; path = ../UIControlCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		75AC16C11D4B49A8001EE1FC /* UIHighLightButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHighLightButton.h; sourceTree = "<group>"; };
+		75AC16C21D4B49A8001EE1FC /* UIHighLightButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHighLightButton.m; sourceTree = "<group>"; };
+		75AC16C41D4EE3D0001EE1FC /* UIControlCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIControlCenterViewController.h; sourceTree = "<group>"; };
+		75AC16C51D4EE3D0001EE1FC /* UIControlCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIControlCenterViewController.m; sourceTree = "<group>"; };
+		BFCF8090FF14D37F5C5AC824 /* Pods-ControlCenter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ControlCenter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ControlCenter/Pods-ControlCenter.debug.xcconfig"; sourceTree = "<group>"; };
+		C739784C6160D0E74CBC8FF5 /* Pods-ControlCenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ControlCenter.release.xcconfig"; path = "Pods/Target Support Files/Pods-ControlCenter/Pods-ControlCenter.release.xcconfig"; sourceTree = "<group>"; };
+		E022E2F8C0752F62570BC2BB /* Pods_ControlCenter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ControlCenter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE5941039F548B1BE539A69D /* Pods_ControlCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +114,8 @@
 				75AC16921D49D389001EE1FC /* ControlCenterTests */,
 				75AC169D1D49D389001EE1FC /* ControlCenterUITests */,
 				75AC16771D49D389001EE1FC /* Products */,
+				BA1A92B79CCA8FB64AECF1A1 /* Pods */,
+				9DC033FA3FA0283B86520886 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +132,9 @@
 		75AC16781D49D389001EE1FC /* ControlCenter */ = {
 			isa = PBXGroup;
 			children = (
+				75AC16BE1D4B3D13001EE1FC /* UIControlCollectionViewFlowLayout.h */,
+				75AC16BF1D4B3D13001EE1FC /* UIControlCollectionViewFlowLayout.m */,
+				75AC16BD1D4B2B3B001EE1FC /* Music */,
 				75AC167C1D49D389001EE1FC /* AppDelegate.h */,
 				75AC167D1D49D389001EE1FC /* AppDelegate.m */,
 				75AC167F1D49D389001EE1FC /* ViewController.h */,
@@ -110,6 +144,14 @@
 				75AC16871D49D389001EE1FC /* LaunchScreen.storyboard */,
 				75AC168A1D49D389001EE1FC /* Info.plist */,
 				75AC16791D49D389001EE1FC /* Supporting Files */,
+				75AC16AC1D49D932001EE1FC /* UIButtonCollectionViewCell.h */,
+				75AC16AD1D49D932001EE1FC /* UIButtonCollectionViewCell.m */,
+				75AC16BA1D4B2443001EE1FC /* ControlCollectionCellModel.h */,
+				75AC16BB1D4B2443001EE1FC /* ControlCollectionCellModel.m */,
+				75AC16C11D4B49A8001EE1FC /* UIHighLightButton.h */,
+				75AC16C21D4B49A8001EE1FC /* UIHighLightButton.m */,
+				75AC16C41D4EE3D0001EE1FC /* UIControlCenterViewController.h */,
+				75AC16C51D4EE3D0001EE1FC /* UIControlCenterViewController.m */,
 			);
 			path = ControlCenter;
 			sourceTree = "<group>";
@@ -140,6 +182,36 @@
 			path = ControlCenterUITests;
 			sourceTree = "<group>";
 		};
+		75AC16BD1D4B2B3B001EE1FC /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				75AC16AF1D4A04D6001EE1FC /* UIControlCenterSlider.h */,
+				75AC16B01D4A04D6001EE1FC /* UIControlCenterSlider.m */,
+				75AC16B21D4A3716001EE1FC /* UIMusicView.h */,
+				75AC16B31D4A3716001EE1FC /* UIMusicView.m */,
+				75AC16B71D4AEF4C001EE1FC /* UIMusicControlView.h */,
+				75AC16B81D4AEF4C001EE1FC /* UIMusicControlView.m */,
+			);
+			name = Music;
+			sourceTree = "<group>";
+		};
+		9DC033FA3FA0283B86520886 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E022E2F8C0752F62570BC2BB /* Pods_ControlCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA1A92B79CCA8FB64AECF1A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BFCF8090FF14D37F5C5AC824 /* Pods-ControlCenter.debug.xcconfig */,
+				C739784C6160D0E74CBC8FF5 /* Pods-ControlCenter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +219,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75AC16A31D49D389001EE1FC /* Build configuration list for PBXNativeTarget "ControlCenter" */;
 			buildPhases = (
+				4E6A09B75DCA9C164784B9D8 /* [CP] Check Pods Manifest.lock */,
 				75AC16721D49D389001EE1FC /* Sources */,
 				75AC16731D49D389001EE1FC /* Frameworks */,
 				75AC16741D49D389001EE1FC /* Resources */,
+				D2A504C7B77859293647C981 /* [CP] Embed Pods Frameworks */,
+				4CAD4DF90AD58BE41C4D2284 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,14 +340,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4CAD4DF90AD58BE41C4D2284 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ControlCenter/Pods-ControlCenter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E6A09B75DCA9C164784B9D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D2A504C7B77859293647C981 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ControlCenter/Pods-ControlCenter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		75AC16721D49D389001EE1FC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75AC16B41D4A3716001EE1FC /* UIMusicView.m in Sources */,
+				75AC16C61D4EE3D0001EE1FC /* UIControlCenterViewController.m in Sources */,
+				75AC16C31D4B49A8001EE1FC /* UIHighLightButton.m in Sources */,
+				75AC16AE1D49D932001EE1FC /* UIButtonCollectionViewCell.m in Sources */,
+				75AC16C01D4B3D13001EE1FC /* UIControlCollectionViewFlowLayout.m in Sources */,
 				75AC16811D49D389001EE1FC /* ViewController.m in Sources */,
 				75AC167E1D49D389001EE1FC /* AppDelegate.m in Sources */,
+				75AC16B11D4A04D6001EE1FC /* UIControlCenterSlider.m in Sources */,
+				75AC16BC1D4B2443001EE1FC /* ControlCollectionCellModel.m in Sources */,
 				75AC167B1D49D389001EE1FC /* main.m in Sources */,
+				75AC16B91D4AEF4C001EE1FC /* UIMusicControlView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,9 +542,11 @@
 		};
 		75AC16A41D49D389001EE1FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFCF8090FF14D37F5C5AC824 /* Pods-ControlCenter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ControlCenter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xxx.ControlCenter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -422,9 +555,11 @@
 		};
 		75AC16A51D49D389001EE1FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C739784C6160D0E74CBC8FF5 /* Pods-ControlCenter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ControlCenter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xxx.ControlCenter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -496,6 +631,7 @@
 				75AC16A51D49D389001EE1FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		75AC16A61D49D389001EE1FC /* Build configuration list for PBXNativeTarget "ControlCenterTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +640,7 @@
 				75AC16A81D49D389001EE1FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		75AC16A91D49D389001EE1FC /* Build configuration list for PBXNativeTarget "ControlCenterUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +649,7 @@
 				75AC16AB1D49D389001EE1FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
