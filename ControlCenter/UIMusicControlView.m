@@ -39,7 +39,8 @@
 - (void)setConstraints
 {
     [self.backForwardButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.height.equalTo(self);
+        make.centerY.equalTo(self);
+        make.height.equalTo(self).with.offset(10);
         make.width.equalTo(self.backForwardButton.mas_height);
         make.size.equalTo(self.playButton);
         make.size.equalTo(self.fastForwardButton);
@@ -75,7 +76,6 @@
     if(!_playButton){
         _playButton = [UIButton buttonWithType:UIButtonTypeSystem];
         _playButton.tintColor = [UIColor whiteColor];
-        _playButton.imageView.image = [UIImage imageNamed:@"play"];
         [_playButton setBackgroundImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
         _playButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
     }
@@ -87,7 +87,6 @@
     if(!_fastForwardButton){
         _fastForwardButton = [UIButton buttonWithType:UIButtonTypeSystem];
         _fastForwardButton.tintColor = [UIColor whiteColor];
-        _fastForwardButton.imageView.image = [UIImage imageNamed:@"fastForward"];
         [_fastForwardButton setBackgroundImage:[UIImage imageNamed:@"fastForward"] forState:UIControlStateNormal];
         _fastForwardButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
     }

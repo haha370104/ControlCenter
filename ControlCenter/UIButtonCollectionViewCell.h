@@ -14,6 +14,6 @@
 @property (nonatomic, strong, readonly) UIHighLightButton *cellButton;
 @property (nonatomic, assign) Boolean roundFlag;
 
-- (void)setBackGroundImage: (UIImage *)backgroundImage;
+- (void)setBackGroundImage:(UIImage *)backgroundImage;
 
 @end

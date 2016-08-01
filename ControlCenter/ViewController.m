@@ -20,7 +20,8 @@
 
 #pragma mark - lifecycle -
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     [self initControlCenterViewController];
 }
@@ -29,7 +30,7 @@
 
 - (void)initControlCenterViewController
 {
-    self.controlCenterViewController = [[UIControlCenterViewController alloc]init];
+    self.controlCenterViewController = [[UIControlCenterViewController alloc] init];
     [self.view addSubview:self.controlCenterViewController.view];
     [self.controlCenterViewController.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.width.bottom.equalTo(self.view);

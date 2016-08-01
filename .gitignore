@@ -7,3 +7,7 @@ Pods/
 
 ControlCenter.xcworkspace/contents.xcworkspacedata
 
+
+*.xml
+
+*.iml

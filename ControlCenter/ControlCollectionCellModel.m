@@ -13,7 +13,7 @@
 - (instancetype)initWithImageName:(NSString *)imageName roundFlag:(Boolean)roundFlag canSelected:(Boolean)canSelected
 {
     self = [super init];
-    if(self){
+    if (self) {
         self.image = [UIImage imageNamed:imageName];
         self.roundFlag = roundFlag;
         self.canSelected = canSelected;

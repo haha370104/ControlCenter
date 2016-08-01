@@ -22,7 +22,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if(self){
+    if (self) {
         [self addSubview:self.cellButton];
         [self addObserver:self forKeyPath:NSStringFromSelector(@selector(roundFlag)) options:NSKeyValueObservingOptionNew context:nil];
         [self setConstraints];
@@ -32,7 +32,7 @@
 
 #pragma mark - public -
 
-- (void)setBackGroundImage: (UIImage *)backgroundImage
+- (void)setBackGroundImage:(UIImage *)backgroundImage
 {
     self.cellButton.tintColor = [UIColor whiteColor];
     [self.cellButton setBackgroundImage:backgroundImage forState:UIControlStateNormal];
@@ -49,13 +49,12 @@
 
 #pragma mark - KVO -
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *, id> *)change context:(void *)context
 {
-    if(object == self && [keyPath isEqualToString:NSStringFromSelector(@selector(roundFlag))])
-    {
-        if(self.roundFlag){
+    if (object == self && [keyPath isEqualToString:NSStringFromSelector(@selector(roundFlag))]) {
+        if (self.roundFlag) {
             self.cellButton.layer.cornerRadius = CGRectGetWidth(self.bounds) / 2;
-        }else{
+        } else {
             self.cellButton.layer.cornerRadius = CGRectGetWidth(self.bounds) / 8;
         }
     }
@@ -65,8 +64,8 @@
 
 - (UIButton *)cellButton
 {
-    if(!_cellButton){
-        _cellButton = [[UIHighLightButton alloc]init];
+    if (!_cellButton) {
+        _cellButton = [[UIHighLightButton alloc] init];
         _cellButton.backgroundColor = [UIColor grayColor];
     }
     return _cellButton;

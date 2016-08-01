@@ -17,10 +17,19 @@
 - (void)setHighlighted:(BOOL)highlighted
 {
     [super setHighlighted:highlighted];
-    if(highlighted){
+    if (highlighted) {
         self.backgroundColor = [UIColor whiteColor];
-    }else{
+    } else {
         self.backgroundColor = [UIColor grayColor];
+    }
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    if (self.backgroundColor == [UIColor whiteColor]) {
+        self.backgroundColor = [UIColor grayColor];
+    } else {
+        self.backgroundColor = [UIColor whiteColor];
     }
 }
 
@@ -30,7 +39,7 @@
     UITouch *touch = [touches anyObject];
     CGPoint endedPoint = [touch locationInView:self];
     Boolean inButton = CGRectContainsPoint(self.bounds, endedPoint);
-    if(inButton && self.action){
+    if (inButton && self.action) {
         self.action(self);
     }
 }
