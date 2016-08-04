@@ -35,13 +35,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     [self.view addSubview:self.dragView];
     [self.view addSubview:self.controlButtonCollectionView];
     [self.view addSubview:self.lightSlider];
     [self.view addSubview:self.musicView];
     [self.view addSubview:self.airDropView];
     [self.view addSubview:self.appButtonCollectionView];
+
     [self setupConstraints];
+
     self.view.backgroundColor = [UIColor lightGrayColor];
 }
 
@@ -49,21 +52,18 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIButtonCollectionViewCell *cell;
+    UIButtonCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([UIButtonCollectionViewCell class]) forIndexPath:indexPath];
     ControlCollectionCellModel *model;
+
     if (collectionView == self.controlButtonCollectionView) {
         model = self.controlButtonCellModels[indexPath.section][indexPath.item];
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([UIButtonCollectionViewCell class]) forIndexPath:indexPath];
-        cell.roundFlag = YES;
-        cell.buttonCanSelectedFlag = YES;
-        [cell setBackGroundImage:model.image];
+        cell.buttonSelectedFlag = model.selectedFlag;
     } else if (collectionView == self.appButtonCollectionView) {
         model = self.appButtonCellModels[indexPath.section][indexPath.item];
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([UIButtonCollectionViewCell class]) forIndexPath:indexPath];
-        cell.roundFlag = NO;
-        cell.buttonCanSelectedFlag = NO;
-        [cell setBackGroundImage:model.image];
     }
+    cell.buttonCanSelectedFlag = (collectionView == self.controlButtonCollectionView);
+    cell.roundFlag = (collectionView == self.controlButtonCollectionView);
+    [cell setBackGroundImage:model.image];
 
     if (model.selectedFlag) {
         cell.cellButton.backgroundColor = [UIColor whiteColor];
@@ -95,6 +95,16 @@
         return self.appButtonCellModels[section].count;
     }
     return 0;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(collectionView == self.controlButtonCollectionView){
+        UIButtonCollectionViewCell *cell = (UIButtonCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+        NSIndexPath *indexPath = [self.controlButtonCollectionView indexPathForCell:cell];
+        BOOL selectedFlag = self.controlButtonCellModels[indexPath.section][indexPath.item].selectedFlag;
+        self.controlButtonCellModels[indexPath.section][indexPath.row].selectedFlag = !selectedFlag;
+    }
 }
 
 #pragma mark - private -
@@ -131,6 +141,12 @@
     }];
 }
 
+#pragma mark - event -
+
+- (void)handleControlButtonClick:(UIButtonCollectionViewCell *)cell
+{
+}
+
 #pragma mark - getter && setter -
 
 - (UIView *)dragView
@@ -146,11 +162,13 @@
 {
     if (!_controlButtonCollectionView) {
         UIControlCollectionViewFlowLayout *layout = [[UIControlCollectionViewFlowLayout alloc] init];
+
         layout.itemSize = CGSizeMake(35, 35);
         CGFloat innerSpace = (self.view.bounds.size.width - 5 * 35) / 6;
         layout.sectionInset = UIEdgeInsetsMake(5, innerSpace, 5, innerSpace);
         layout.minimumLineSpacing = innerSpace;
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+
         _controlButtonCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _controlButtonCollectionView.backgroundColor = [UIColor lightGrayColor];
         _controlButtonCollectionView.delegate = self;
@@ -199,11 +217,13 @@
 {
     if (!_appButtonCollectionView) {
         UIControlCollectionViewFlowLayout *layout = [[UIControlCollectionViewFlowLayout alloc] init];
+
         layout.itemSize = CGSizeMake(60, 60);
         CGFloat innerSpace = (self.view.bounds.size.width - 4 * 60) / 5;
         layout.sectionInset = UIEdgeInsetsMake(5, innerSpace, 5, innerSpace);
         layout.minimumLineSpacing = innerSpace;
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        
         _appButtonCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _appButtonCollectionView.backgroundColor = [UIColor lightGrayColor];
         _appButtonCollectionView.delegate = self;

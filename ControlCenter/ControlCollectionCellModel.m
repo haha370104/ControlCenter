@@ -10,7 +10,7 @@
 
 @implementation ControlCollectionCellModel
 
-- (instancetype)initWithImageName:(NSString *)imageName roundFlag:(Boolean)roundFlag canSelected:(Boolean)canSelected
+- (instancetype)initWithImageName:(NSString *)imageName roundFlag:(BOOL)roundFlag canSelected:(BOOL)canSelected
 {
     self = [super init];
     if (self) {

@@ -59,7 +59,7 @@
     return _cellButton;
 }
 
-- (void)setRoundFlag:(Boolean)roundFlag
+- (void)setRoundFlag:(BOOL)roundFlag
 {
     _roundFlag = roundFlag;
     if (self.roundFlag) {
@@ -74,6 +74,14 @@
     _buttonCanSelectedFlag = buttonCanSelectedFlag;
     [self addSubview:self.cellButton];
     [self setConstraints];
+}
+
+- (void)setButtonSelectedFlag:(BOOL)buttonSelectedFlag
+{
+    _buttonSelectedFlag = buttonSelectedFlag;
+    if(buttonSelectedFlag){
+        self.cellButton.backgroundColor = [UIColor whiteColor];
+    }
 }
 
 @end

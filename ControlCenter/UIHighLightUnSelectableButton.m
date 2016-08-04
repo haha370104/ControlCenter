@@ -12,7 +12,6 @@
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [super touchesEnded:touches withEvent:event];
     UITouch *touch = [touches anyObject];
     CGPoint endedPoint = [touch locationInView:self];
     Boolean inButton = CGRectContainsPoint(self.bounds, endedPoint);

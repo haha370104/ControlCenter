@@ -12,10 +12,10 @@
 @interface ControlCollectionCellModel : NSObject
 
 @property (nonatomic, strong) UIImage *image;
-@property (nonatomic, assign) Boolean roundFlag;
-@property (nonatomic, assign) Boolean canSelected;
-@property (nonatomic, assign) Boolean selectedFlag;
+@property (nonatomic, assign) BOOL roundFlag;
+@property (nonatomic, assign) BOOL canSelected;
+@property (nonatomic, assign) BOOL selectedFlag;
 
-- (instancetype)initWithImageName:(NSString *)imageName roundFlag:(Boolean)roundFlag canSelected:(Boolean)canSelected;
+- (instancetype)initWithImageName:(NSString *)imageName roundFlag:(BOOL)roundFlag canSelected:(BOOL)canSelected;
 
 @end

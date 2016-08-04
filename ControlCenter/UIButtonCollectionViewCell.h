@@ -13,8 +13,9 @@
 @interface UIButtonCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic, strong, readonly) UIHighLightButton *cellButton;
-@property (nonatomic, assign) Boolean roundFlag;
+@property (nonatomic, assign) BOOL roundFlag;
 @property (nonatomic, assign) BOOL buttonCanSelectedFlag;
+@property (nonatomic, assign) BOOL buttonSelectedFlag;
 
 - (void)setBackGroundImage:(UIImage *)backgroundImage;
 

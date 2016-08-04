@@ -69,7 +69,7 @@
     [super touchesMoved:touches withEvent:event];
     UITouch *touch = [touches anyObject];
     CGPoint endedPoint = [touch locationInView:self];
-    Boolean inButton = CGRectContainsPoint(self.bounds, endedPoint);
+    BOOL inButton = CGRectContainsPoint(self.bounds, endedPoint);
     if(!inButton){
         if(self.selectedFlag){
             self.backgroundColor = [UIColor whiteColor];
@@ -92,6 +92,7 @@
 
 - (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
+    [super touchesCancelled:touches withEvent:event];
     if(self.selectedFlag){
         self.backgroundColor = [UIColor whiteColor];
     }else{
@@ -115,16 +116,6 @@
         _title = [[UILabel alloc]initWithFrame:self.bounds];
     }
     return _title;
-}
-
-- (void)setSelectedFlag:(BOOL)selectedFlag
-{
-    _selectedFlag = selectedFlag;
-    if(self.selectedFlag){
-        self.backgroundColor = [UIColor whiteColor];
-    }else{
-        self.backgroundColor = [UIColor grayColor];
-    }
 }
 
 @end
