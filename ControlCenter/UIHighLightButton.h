@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIHighLightButton : UIButton
+@interface UIHighLightButton : UIView
 
-@property (nonatomic, copy) void (^action)(UIHighLightButton *);
+@property (nonatomic, strong, readonly) UIImageView *backgroundImageView;
+@property (nonatomic, strong, readonly) UILabel *title;
+@property (nonatomic, assign) BOOL selectedFlag;
+
+- (void)setBackgroundImage:(UIImage *)image;
 
 @end

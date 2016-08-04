@@ -55,23 +55,14 @@
         model = self.controlButtonCellModels[indexPath.section][indexPath.item];
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([UIButtonCollectionViewCell class]) forIndexPath:indexPath];
         cell.roundFlag = YES;
+        cell.buttonCanSelectedFlag = YES;
         [cell setBackGroundImage:model.image];
-        [cell.cellButton setAction:^(UIHighLightButton *button) {
-            model.selectedFlag = !model.selectedFlag;
-            if (model.selectedFlag) {
-                button.backgroundColor = [UIColor whiteColor];
-            } else {
-                button.backgroundColor = [UIColor grayColor];
-            }
-        }];
     } else if (collectionView == self.appButtonCollectionView) {
         model = self.appButtonCellModels[indexPath.section][indexPath.item];
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([UIButtonCollectionViewCell class]) forIndexPath:indexPath];
         cell.roundFlag = NO;
+        cell.buttonCanSelectedFlag = NO;
         [cell setBackGroundImage:model.image];
-        [cell.cellButton setAction:^(UIHighLightButton *button) {
-            button.backgroundColor = [UIColor grayColor];
-        }];
     }
 
     if (model.selectedFlag) {
@@ -197,10 +188,9 @@
     if (!_airDropView) {
         _airDropView = [[UIHighLightButton alloc] init];
         _airDropView.backgroundColor = [UIColor grayColor];
-        [_airDropView setTitle:@"AirDrop 共享" forState:UIControlStateNormal];
-        _airDropView.titleLabel.font = [UIFont systemFontOfSize:14];
-        [_airDropView setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [_airDropView setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+        _airDropView.title.text = @"AirDrop 共享";
+        _airDropView.title.font = [UIFont systemFontOfSize:14];
+        _airDropView.title.textColor = [UIColor blackColor];
     }
     return _airDropView;
 }

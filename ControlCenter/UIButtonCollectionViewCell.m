@@ -23,16 +23,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self addSubview:self.cellButton];
-        [self addObserver:self forKeyPath:NSStringFromSelector(@selector(roundFlag)) options:NSKeyValueObservingOptionNew context:nil];
-        [self setConstraints];
     }
     return self;
-}
-
-- (void)dealloc
-{
-    [self removeObserver:self forKeyPath:NSStringFromSelector(@selector(roundFlag))];
 }
 
 #pragma mark - public -
@@ -40,7 +32,7 @@
 - (void)setBackGroundImage:(UIImage *)backgroundImage
 {
     self.cellButton.tintColor = [UIColor whiteColor];
-    [self.cellButton setBackgroundImage:backgroundImage forState:UIControlStateNormal];
+    [self.cellButton setBackgroundImage:backgroundImage];
 }
 
 #pragma mark - private -
@@ -52,28 +44,36 @@
     }];
 }
 
-#pragma mark - KVO -
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *, id> *)change context:(void *)context
-{
-    if (object == self && [keyPath isEqualToString:NSStringFromSelector(@selector(roundFlag))]) {
-        if (self.roundFlag) {
-            self.cellButton.layer.cornerRadius = CGRectGetWidth(self.bounds) / 2;
-        } else {
-            self.cellButton.layer.cornerRadius = CGRectGetWidth(self.bounds) / 8;
-        }
-    }
-}
-
 #pragma mark - getter && setter -
 
-- (UIButton *)cellButton
+- (UIView *)cellButton
 {
     if (!_cellButton) {
-        _cellButton = [[UIHighLightButton alloc] init];
+        if(_buttonCanSelectedFlag){
+            _cellButton = [[UIHighLightButton alloc] init];
+        }else{
+            _cellButton = [[UIHighLightUnSelectableButton alloc]init];
+        }
         _cellButton.backgroundColor = [UIColor grayColor];
     }
     return _cellButton;
+}
+
+- (void)setRoundFlag:(Boolean)roundFlag
+{
+    _roundFlag = roundFlag;
+    if (self.roundFlag) {
+        self.cellButton.layer.cornerRadius = CGRectGetWidth(self.bounds) / 2;
+    } else {
+        self.cellButton.layer.cornerRadius = CGRectGetWidth(self.bounds) / 8;
+    }
+}
+
+- (void)setButtonCanSelectedFlag:(BOOL)buttonCanSelectedFlag
+{
+    _buttonCanSelectedFlag = buttonCanSelectedFlag;
+    [self addSubview:self.cellButton];
+    [self setConstraints];
 }
 
 @end

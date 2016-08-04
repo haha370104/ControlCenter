@@ -7,12 +7,14 @@
 //
 
 #import "UIHighLightButton.h"
+#import "UIHighLightUnSelectableButton.h"
 #import <UIKit/UIKit.h>
 
 @interface UIButtonCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic, strong, readonly) UIHighLightButton *cellButton;
 @property (nonatomic, assign) Boolean roundFlag;
+@property (nonatomic, assign) BOOL buttonCanSelectedFlag;
 
 - (void)setBackGroundImage:(UIImage *)backgroundImage;
 

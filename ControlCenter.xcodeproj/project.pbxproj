@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		756B673D1D5302D4005B0DC0 /* UIHighLightUnSelectableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 756B673C1D5302D4005B0DC0 /* UIHighLightUnSelectableButton.m */; };
 		75AC167B1D49D389001EE1FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 75AC167A1D49D389001EE1FC /* main.m */; };
 		75AC167E1D49D389001EE1FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75AC167D1D49D389001EE1FC /* AppDelegate.m */; };
 		75AC16811D49D389001EE1FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75AC16801D49D389001EE1FC /* ViewController.m */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		756B673B1D5302D4005B0DC0 /* UIHighLightUnSelectableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHighLightUnSelectableButton.h; sourceTree = "<group>"; };
+		756B673C1D5302D4005B0DC0 /* UIHighLightUnSelectableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHighLightUnSelectableButton.m; sourceTree = "<group>"; };
 		75AC16761D49D389001EE1FC /* ControlCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ControlCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75AC167A1D49D389001EE1FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		75AC167C1D49D389001EE1FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -150,6 +153,8 @@
 				75AC16BB1D4B2443001EE1FC /* ControlCollectionCellModel.m */,
 				75AC16C11D4B49A8001EE1FC /* UIHighLightButton.h */,
 				75AC16C21D4B49A8001EE1FC /* UIHighLightButton.m */,
+				756B673B1D5302D4005B0DC0 /* UIHighLightUnSelectableButton.h */,
+				756B673C1D5302D4005B0DC0 /* UIHighLightUnSelectableButton.m */,
 				75AC16C41D4EE3D0001EE1FC /* UIControlCenterViewController.h */,
 				75AC16C51D4EE3D0001EE1FC /* UIControlCenterViewController.m */,
 			);
@@ -395,6 +400,7 @@
 			files = (
 				75AC16B41D4A3716001EE1FC /* UIMusicView.m in Sources */,
 				75AC16C61D4EE3D0001EE1FC /* UIControlCenterViewController.m in Sources */,
+				756B673D1D5302D4005B0DC0 /* UIHighLightUnSelectableButton.m in Sources */,
 				75AC16C31D4B49A8001EE1FC /* UIHighLightButton.m in Sources */,
 				75AC16AE1D49D932001EE1FC /* UIButtonCollectionViewCell.m in Sources */,
 				75AC16C01D4B3D13001EE1FC /* UIControlCollectionViewFlowLayout.m in Sources */,
