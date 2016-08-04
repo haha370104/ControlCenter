@@ -78,7 +78,7 @@
 
 - (void)setButtonSelectedFlag:(BOOL)buttonSelectedFlag
 {
-    _buttonSelectedFlag = buttonSelectedFlag;
+    _cellButton.selectedFlag = buttonSelectedFlag;
     if(buttonSelectedFlag){
         self.cellButton.backgroundColor = [UIColor whiteColor];
     }

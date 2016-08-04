@@ -223,7 +223,7 @@
         layout.sectionInset = UIEdgeInsetsMake(5, innerSpace, 5, innerSpace);
         layout.minimumLineSpacing = innerSpace;
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        
+
         _appButtonCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _appButtonCollectionView.backgroundColor = [UIColor lightGrayColor];
         _appButtonCollectionView.delegate = self;
